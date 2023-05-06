@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/auth_service.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -7,8 +8,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MaterialApp(
-    home: MyApp(),
+  runApp(MaterialApp(
+    home: AuthService().handleAuthState(),
   ));
 }
 
@@ -90,7 +91,8 @@ class _MyAppState extends State<MyApp> {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                              fontSize: MediaQuery.of(context).size.height * 0.03,
+                              fontSize:
+                                  MediaQuery.of(context).size.height * 0.03,
                               color: Colors.black),
                         ),
                       ),
@@ -105,10 +107,16 @@ class _MyAppState extends State<MyApp> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.1,
                       child: ElevatedButton(
-                        style: ButtonStyle(backgroundColor:MaterialStateProperty.all<Color>(Colors.white),padding: MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(12))),
-                        onPressed: null,
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.white),
+                            padding: MaterialStateProperty.all<EdgeInsets>(
+                                const EdgeInsets.all(12))),
+                        onPressed: () {
+                          AuthService().signInWithGoogle();
+                        },
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Image.asset(
                               'assets/images/google_logo.png',
@@ -118,7 +126,9 @@ class _MyAppState extends State<MyApp> {
                             Text(
                               "Google",
                               style: TextStyle(
-                                  fontSize: MediaQuery.of(context).size.height * 0.01,color: Colors.black),
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.01,
+                                  color: Colors.black),
                             ),
                           ],
                         ),
@@ -130,10 +140,10 @@ class _MyAppState extends State<MyApp> {
                       child: Text(
                         "Create Account",
                         style: TextStyle(
-                            fontSize: MediaQuery.of(context).size.height * 0.02),
+                            fontSize:
+                                MediaQuery.of(context).size.height * 0.02),
                       ),
                     ),
-
                   ],
                 )
               ],
