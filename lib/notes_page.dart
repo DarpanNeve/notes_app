@@ -39,7 +39,7 @@ class NotesPage extends StatelessWidget {
                     return Center(
                       child:Text(
                         document['Title'].toString(),
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       ),
                     );
                   }).toList(),
