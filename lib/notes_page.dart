@@ -37,8 +37,8 @@ class NotesPage extends StatelessWidget {
                 child: ListView(
                   children: snapshot.data!.docs.map((document) {
                     return Center(
-                      child:Text(
-                        document['Title'].toString(),
+                      child: Text(
+                        document['title'],
                         style: const TextStyle(color: Colors.white),
                       ),
                     );
@@ -47,6 +47,28 @@ class NotesPage extends StatelessWidget {
               );
             },
           )
+          // StreamBuilder(
+          //   stream: FirebaseFirestore.instance.collection("Notes").snapshots(),
+          //   builder: (BuildContext context,
+          //       AsyncSnapshot<QuerySnapshot> snapshot) {
+          //     if (snapshot.connectionState == ConnectionState.waiting) {
+          //       return const Center(
+          //         child: CircularProgressIndicator(),
+          //       );
+          //     }
+          //     return Expanded(
+          //       child:GridView.builder(gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 200.00), itemBuilder: (context, index) {
+          //         return Center(
+          //             child: Text(
+          //             document['title'],
+          //             style: const TextStyle(color: Colors.white),
+          //           ),
+          //         );
+          //
+          //
+          //       },)
+          //     );
+          //   },),
         ],
       ),
     );
