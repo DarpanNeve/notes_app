@@ -1,6 +1,6 @@
 # notes_app
 
-A new Flutter project created to integrate firebase realtime database and Authentification to my Application
+A new Flutter project created to integrate firebase realtime database and Authentication to my Application
 
 ## Getting Started
 
