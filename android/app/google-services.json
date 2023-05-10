@@ -95,6 +95,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "893826836090-fscposu2fnf8qc24hcuu7kk2n015nb1a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.notes_app",
+            "certificate_hash": "c7f2331e754d3e3798465e4208fa254e0cac68a4"
+          }
+        },
+        {
           "client_id": "893826836090-c40dnntnc0f5q1dih07vkjjoakddkd1d.apps.googleusercontent.com",
           "client_type": 3
         }
