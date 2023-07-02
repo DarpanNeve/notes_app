@@ -25,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -76,5 +73,17 @@ class DefaultFirebaseOptions {
     androidClientId: '893826836090-0rrm1thltaaiqk9i476l6pm96mff7mjc.apps.googleusercontent.com',
     iosClientId: '893826836090-nro1ilqq4qgpie0u7njn959v2rmo1cfr.apps.googleusercontent.com',
     iosBundleId: 'com.example.notesApp',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCHfe2CPWVcygUVFFWUHHE_TIdsR13JVas',
+    appId: '1:893826836090:ios:77c29c5a57448e3ed1fdc3',
+    messagingSenderId: '893826836090',
+    projectId: 'testing-aa21c',
+    databaseURL: 'https://testing-aa21c-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'testing-aa21c.appspot.com',
+    androidClientId: '893826836090-0rrm1thltaaiqk9i476l6pm96mff7mjc.apps.googleusercontent.com',
+    iosClientId: '893826836090-pfdekpb282tpjmsnf98021sn8ootfovs.apps.googleusercontent.com',
+    iosBundleId: 'com.DN.notes',
   );
 }

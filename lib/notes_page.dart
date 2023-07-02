@@ -21,7 +21,7 @@ class NotesPage extends StatelessWidget {
         children: <Widget>[
           const Text(
             "Your recent Notes",
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.white),
           ),
           const SizedBox(height: 20.0),
           StreamBuilder(
@@ -47,28 +47,6 @@ class NotesPage extends StatelessWidget {
               );
             },
           )
-          // StreamBuilder(
-          //   stream: FirebaseFirestore.instance.collection("Notes").snapshots(),
-          //   builder: (BuildContext context,
-          //       AsyncSnapshot<QuerySnapshot> snapshot) {
-          //     if (snapshot.connectionState == ConnectionState.waiting) {
-          //       return const Center(
-          //         child: CircularProgressIndicator(),
-          //       );
-          //     }
-          //     return Expanded(
-          //       child:GridView.builder(gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 200.00), itemBuilder: (context, index) {
-          //         return Center(
-          //             child: Text(
-          //             document['title'],
-          //             style: const TextStyle(color: Colors.white),
-          //           ),
-          //         );
-          //
-          //
-          //       },)
-          //     );
-          //   },),
         ],
       ),
     );

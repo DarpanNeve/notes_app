@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                   children: <Widget>[
                     SizedBox(height: MediaQuery.of(context).size.height * 0.10),
                     SelectableText(
-                      "Hello. \nWelcome Back",
+                      "Hello   \nWelcome Back",
                       style: TextStyle(
                           fontSize: MediaQuery.of(context).size.height * 0.10),
                     ),
