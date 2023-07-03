@@ -21,7 +21,8 @@ class NotesPage extends StatelessWidget {
         children: <Widget>[
           const Text(
             "Your recent Notes",
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.white),
+            style: TextStyle(
+                fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
           ),
           const SizedBox(height: 20.0),
           StreamBuilder(
@@ -34,15 +35,37 @@ class NotesPage extends StatelessWidget {
                 );
               }
               return Expanded(
-                child: ListView(
-                  children: snapshot.data!.docs.map((document) {
-                    return Center(
-                      child: Text(
-                        document['title'],
-                        style: const TextStyle(color: Colors.white),
-                      ),
+                child: GridView.builder(
+                  itemCount: snapshot.data!.docs.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    final document = snapshot.data!.docs[index];
+                    return Column(
+                      children: <Widget>[
+                        Text(
+                          document['title'],
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        Text(
+                          document['content'],
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        Text(
+                          document['date'].toString(),
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        Text(
+                          document['color'].toString(),
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      ],
                     );
-                  }).toList(),
+                  },
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 200.0,
+                    mainAxisExtent: 100.0,
+                    crossAxisSpacing: 5.0,
+                    mainAxisSpacing: 5.0,
+                  ),
                 ),
               );
             },
