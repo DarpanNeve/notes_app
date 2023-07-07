@@ -46,7 +46,7 @@ class NotesPage extends StatelessWidget {
                           style: const TextStyle(color: Colors.white),
                         ),
                         Text(
-                          document['content '],
+                          document['content'],
                           style: const TextStyle(color: Colors.white),
                         ),
                         Text(
